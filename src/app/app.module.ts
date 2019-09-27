@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { ImageListComponent } from './image-list/image-list.component';
 
 import { ImageService } from './image.service';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

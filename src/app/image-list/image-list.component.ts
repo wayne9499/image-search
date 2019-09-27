@@ -10,11 +10,14 @@ export class ImageListComponent implements OnInit {
   searchQuery: string;
   images: any[];
   imageFound = false;
+  searching = false;
+
   handleSuccess(data) {
     this.imageFound = true;
     this.images = data.hits;
     console.log(data.hits);
   }
+
   handleError(err) {
     console.log(err);
   }
@@ -22,10 +25,11 @@ export class ImageListComponent implements OnInit {
   constructor(private imageServices: ImageService) { }
 
   searchImages(query: string) {
+    this.searching = true;
     return this.imageServices.getImage(query).subscribe(
       data => this.handleSuccess(data),
       err => this.handleError(err),
-      () => console.log('Complete!')
+      () => this.searching = false
     );
   }
 

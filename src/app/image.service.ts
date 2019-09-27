@@ -17,6 +17,6 @@ export class ImageService {
   constructor(private http: HttpClient) { }
 
   getImage(query: string) {
-    return this.http.get(this.URL + query + this.perPage).pipe(map((res: any) => res.json()));
+    return this.http.get(this.URL + query + this.perPage).pipe(map((res: any) => res));
   }
 }
