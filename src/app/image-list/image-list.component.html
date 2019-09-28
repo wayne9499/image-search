@@ -17,7 +17,7 @@
 
     <div mat-card-avatar class="cd-header-image">
     <mat-card-header>
-    <mat-card-title>{{ image.tags }}</mat-card-title>
+    <mat-card-title>{{ image.tags | titlecase }}</mat-card-title>
     <mat-card-subtitle>{{ image.user }} </mat-card-subtitle>
     </mat-card-header>
     </div>
@@ -25,12 +25,10 @@
   <img mat-card-image src="{{ image.webformatURL }}" alt="Photo of a Shiba Inu">
 
   <mat-card-actions>
-  <button mat-raised-button color="primary"
-      matBadge="5" matBadgePosition="before" matBadgeColor="accent">
+  <button mat-raised-button color="primary" matBadgePosition="before" matBadgeColor="accent">
    Likes: {{ image.likes }}
   </button>
-  <button mat-raised-button color="primary"
-      matBadge="5" matBadgePosition="before" matBadgeColor="accent">
+  <button mat-raised-button color="primary" matBadgePosition="before" matBadgeColor="accent">
    Comments: {{ image.comments }}
   </button>
   </mat-card-actions>
