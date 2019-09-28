@@ -8,6 +8,11 @@ import { ImageListComponent } from './image-list/image-list.component';
 import { ImageService } from './image.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule, MatCardModule, MatMenuModule,
+  MatToolbarModule, MatIconModule,
+  MatAutocompleteModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +23,12 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    [MatButtonModule, MatCardModule, MatMenuModule,
+      MatToolbarModule, MatIconModule,
+      MatAutocompleteModule, MatInputModule, MatFormFieldModule]
+
   ],
   providers: [ImageService],
   bootstrap: [AppComponent]

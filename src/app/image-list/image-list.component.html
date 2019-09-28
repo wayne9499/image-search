@@ -1,11 +1,42 @@
-<input type="text" class="search" [(ngModel)]="searchQuery" placeholder="Search for images">
-<button (click)="searchImages(searchQuery)"> Find Images </button>
+<div class="container">
+<mat-form-field class="example-full-width">
+<input matInput type="text" class="search" [(ngModel)]="searchQuery" placeholder="Search for images">
+</mat-form-field>
+<div class="sty-button-row">
+<button mat-raised-button color="accent" (click)="searchImages(searchQuery)"> Find Images </button>
+</div>
+</div>
+ <br>
 
+<div class="container">
 <p *ngIf="searching">Fetching data..</p>
 
+<mat-card class="cd-card">
+
 <div *ngFor="let image of images" class="image-container">
-<img src="{{ image.webformatURL }}">
-<p> Tags: {{ image.tags }} </p>
-<p> User: {{ image.user }} </p>
-<p> Likes: {{ image.comments }} </p>
+
+    <div mat-card-avatar class="cd-header-image">
+    <mat-card-header>
+    <mat-card-title>{{ image.tags }}</mat-card-title>
+    <mat-card-subtitle>{{ image.user }} </mat-card-subtitle>
+    </mat-card-header>
+    </div>
+
+  <img mat-card-image src="{{ image.webformatURL }}" alt="Photo of a Shiba Inu">
+
+  <mat-card-actions>
+  <button mat-raised-button color="primary"
+      matBadge="5" matBadgePosition="before" matBadgeColor="accent">
+   Likes: {{ image.likes }}
+  </button>
+  <button mat-raised-button color="primary"
+      matBadge="5" matBadgePosition="before" matBadgeColor="accent">
+   Comments: {{ image.comments }}
+  </button>
+  </mat-card-actions>
+  <hr> <hr>
 </div>
+ </mat-card>
+ </div>
+
+

@@ -26,6 +26,10 @@ export class ImageListComponent implements OnInit {
 
   searchImages(query: string) {
     this.searching = true;
+     /* Subscribe takes 3 methods as parameters each are functions:
+next: For each item being emitted by the observable perform this function
+error: If somewhere in the stream an error is found, do this method
+complete: Once all items are complete from the stream, do this method */
     return this.imageServices.getImage(query).subscribe(
       data => this.handleSuccess(data),
       err => this.handleError(err),

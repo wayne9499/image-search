@@ -1,0 +1,29 @@
+.sty-button-row button,
+.sty-button-row a {
+  margin-right: 8px;
+}
+
+.container {
+  text-align: center;
+}
+
+img {
+  width: 60%;
+  height: 40%;
+  }
+
+  .cd-card {
+    max-width: 1000px;
+  }
+
+  .cd-header-image {
+    background-image: url('https://material.angular.io/assets/img/cds/shiba1.jpg');
+    background-size: cover;
+  }
+
+  mat-card-title {
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
